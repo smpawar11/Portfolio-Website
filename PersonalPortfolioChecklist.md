@@ -2,8 +2,8 @@
 
 ## Project Setup
 
-- [ ] Create a GitHub repository for the project
-- [ ] Initialize a new React project using Create React App or Vite
+- [x] Create a GitHub repository for the project
+- [x] Initialize a new React project using Create React App or Vite
 - [ ] Set up project folder structure (components, styles, assets, etc.)
 - [ ] Install necessary dependencies (React Router, styling libraries, etc.)
 - [ ] Create initial README.md with project description
