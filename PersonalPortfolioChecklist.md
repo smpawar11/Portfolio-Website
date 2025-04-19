@@ -4,11 +4,11 @@
 
 - [x] Create a GitHub repository for the project
 - [x] Initialize a new React project using Create React App or Vite
-- [ ] Set up project folder structure (components, styles, assets, etc.)
-- [ ] Install necessary dependencies (React Router, styling libraries, etc.)
-- [ ] Create initial README.md with project description
-- [ ] Make first commit and push to GitHub
-- [ ] Create a development branch from main
+- [x] Set up project folder structure (components, styles, assets, etc.)
+- [x] Install necessary dependencies (React Router, styling libraries, etc.)
+- [x] Create initial README.md with project description
+- [x] Make first commit and push to GitHub
+- [x] Create a development branch from main
 
 ## Design Phase
 
