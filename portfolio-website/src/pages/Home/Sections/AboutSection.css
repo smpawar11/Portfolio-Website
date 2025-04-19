@@ -1,0 +1,94 @@
+.about-section {
+  background-color: #F9FAFB;
+}
+
+.about-content {
+  margin-top: 3rem;
+}
+
+.about-text {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-paragraph {
+  font-family: 'Open Sans', 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+.skills-container {
+  margin-top: 3rem;
+}
+
+.skills-title {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  color: #0F172A;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skill-category {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.category-title {
+  font-family: 'Inter', 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #3B82F6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list li {
+  font-family: 'Open Sans', 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #475569;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #E2E8F0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skills-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #10B981;
+}
+
+.skills-list li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
