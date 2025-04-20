@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Blog.css';
 
 const Blog = () => {
@@ -41,29 +42,80 @@ const Blog = () => {
     }
   ];
 
+  // Animation variants for container and items
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <div className="blog-page">
       <div className="blog-header">
         <div className="container">
-          <h1 className="blog-title">Blog</h1>
-          <p className="blog-subtitle">Thoughts, tutorials, and insights about programming and technology.</p>
+          <motion.h1 
+            className="blog-title"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Blog
+          </motion.h1>
+          <motion.p 
+            className="blog-subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Thoughts, tutorials, and insights about programming and technology.
+          </motion.p>
         </div>
       </div>
       
       <div className="blog-content">
         <div className="container">
-          <div className="blog-posts">
-            {blogPosts.map(post => (
-              <div className="blog-post-card" key={post.id}>
+          <motion.div 
+            className="blog-posts"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {blogPosts.map((post, index) => (
+              <motion.div 
+                className="blog-post-card" 
+                key={post.id}
+                variants={itemVariants}
+                whileHover={{ 
+                  y: -5, 
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.08)",
+                  transition: { duration: 0.2 } 
+                }}
+              >
                 <h2 className="post-title">{post.title}</h2>
                 <p className="post-date">{post.date}</p>
                 <p className="post-snippet">{post.snippet}</p>
                 <a href={`/blog/${post.slug}`} className="read-more">
                   Read more <i className="fas fa-arrow-right"></i>
                 </a>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
