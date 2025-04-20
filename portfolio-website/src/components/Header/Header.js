@@ -9,11 +9,19 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="container">
         <div className="logo">
-          <Link to="/">SP</Link>
+          <Link to="/" onClick={scrollToTop}>SP</Link>
         </div>
         
         <div className={`mobile-menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
@@ -24,7 +32,7 @@ const Header = () => {
         
         <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
           <ul className="nav-list">
-            <li className="nav-item"><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
+            <li className="nav-item"><Link to="/" onClick={scrollToTop}>Home</Link></li>
             <li className="nav-item"><a href="/#projects" onClick={() => setIsMenuOpen(false)}>Projects</a></li>
             <li className="nav-item"><a href="/#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
             <li className="nav-item"><a href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
