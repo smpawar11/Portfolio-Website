@@ -43,3 +43,14 @@ Can you create a markdown listing all the prompts you have received and you have
 *2025-04-19, 19:53*
 
 Can you update the? Prompts. Add is description about what this document is. And also. The heading has to just say prompt and a number. That's all. And the date stamp, the actual content has to be underneath it, so can you just do that now?
+
+## Prompt 5
+*2025-04-20, 19:54*
+
+COPILOT_PROMPTS_USED.md that documents all prompts in our conversation. Format each entry with:
+1. Sequential numbered headings (## Prompt 1, ## Prompt 2, etc.)
+2. Timestamp in italics directly under each heading (*YYYY-MM-DD, HH:MM*)
+3. Full prompt text on a new line after the timestamp
+4. Add a brief introduction explaining that this document tracks all AI interactions chronologically
+
+i want this to happen through out this coding session
