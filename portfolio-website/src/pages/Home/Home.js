@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Home.css';
 import HeroSection from './Sections/HeroSection';
@@ -24,6 +24,23 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    // Check if there's a section to scroll to (set from the Header when coming from Blog page)
+    const sectionToScrollTo = sessionStorage.getItem('scrollToSection');
+    
+    if (sectionToScrollTo) {
+      // Small delay to allow the page to render first
+      setTimeout(() => {
+        const section = document.getElementById(sectionToScrollTo);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+        // Clear the stored section to prevent unwanted scrolling on future visits
+        sessionStorage.removeItem('scrollToSection');
+      }, 100);
+    }
+  }, []);
+
   return (
     <div className="home-page">
       {/* Hero section doesn't need the animation as it's the first thing visible */}
@@ -35,7 +52,7 @@ const Home = () => {
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <ProjectsSection />
+        <div id="projects"><ProjectsSection /></div>
       </motion.div>
       
       <motion.div
@@ -44,7 +61,7 @@ const Home = () => {
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <AboutSection />
+        <div id="about"><AboutSection /></div>
       </motion.div>
       
       <motion.div
@@ -53,7 +70,7 @@ const Home = () => {
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <ContactSection />
+        <div id="contact"><ContactSection /></div>
       </motion.div>
     </div>
   );
