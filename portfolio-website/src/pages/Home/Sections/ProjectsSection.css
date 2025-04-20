@@ -87,16 +87,79 @@
   color: #2563EB;
 }
 
-/* For screens smaller than 768px */
-@media (max-width: 768px) {
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
   }
 }
 
-/* For screens between 769px and 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.35rem;
+  }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .project-card:hover {
+    transform: none;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .projects-grid {
+    margin-top: 2rem;
+    gap: 1.25rem;
+  }
+  
+  .project-content {
+    padding: 1.25rem;
+  }
+  
+  .project-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .project-description {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .project-tech {
+    margin-bottom: 1.25rem;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+  }
+}
+
+/* For devices with no hover capability */
+@media (hover: none) {
+  .project-card:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 }

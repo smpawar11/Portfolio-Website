@@ -9,6 +9,7 @@
 .about-text {
   max-width: 900px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .about-paragraph {
@@ -35,6 +36,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  padding: 0 1rem;
 }
 
 .skill-category {
@@ -42,6 +44,12 @@
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .category-title {
@@ -80,15 +88,102 @@
 }
 
 /* Responsive styles */
+@media (max-width: 1199px) {
+  .skills-grid {
+    gap: 1.5rem;
+  }
+  
+  .skill-category {
+    padding: 1.25rem;
+  }
+}
+
 @media (max-width: 992px) {
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .about-text {
+    max-width: 700px;
+  }
+  
+  .about-paragraph {
+    font-size: 1.05rem;
+  }
+  
+  .skills-title {
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .about-content {
+    margin-top: 2rem;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .skills-container {
+    margin-top: 2.5rem;
+  }
+  
+  .about-paragraph {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-content {
+    margin-top: 1.5rem;
+  }
+
+  .skills-container {
+    margin-top: 2rem;
+  }
+  
+  .skills-title {
+    font-size: 1.4rem;
+  }
+  
+  .category-title {
+    font-size: 1.1rem;
+  }
+  
+  .about-paragraph {
+    text-align: left;
+    margin-bottom: 1.25rem;
+  }
+  
+  .skills-list li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .skill-category {
+    padding: 1rem;
+  }
+  
+  .skills-title {
+    font-size: 1.3rem;
+  }
+  
+  .about-paragraph {
+    font-size: 0.95rem;
+  }
+}
+
+/* For devices with hover capability */
+@media (hover: none) {
+  .skill-category:hover {
+    transform: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   }
 }

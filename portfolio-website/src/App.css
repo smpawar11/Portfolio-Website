@@ -10,6 +10,11 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Open Sans', 'Roboto', sans-serif;
   line-height: 1.5;
@@ -17,6 +22,7 @@ body {
   background-color: #F9FAFB;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,6 +38,12 @@ a {
 img {
   max-width: 100%;
   height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
 
 /* Container */
@@ -67,6 +79,43 @@ img {
   background-color: #0F172A;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Flex utilities */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Animation Utilities */
 .fade-in {
   animation: fadeIn 1s ease-in forwards;
@@ -88,6 +137,11 @@ main {
   min-height: calc(100vh - 70px - 80px); /* Viewport height minus header and footer height */
 }
 
+/* Section padding */
+section {
+  padding: 5rem 0;
+}
+
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 8px;
@@ -106,6 +160,67 @@ main {
   background: #64748B;
 }
 
+/* Responsive typography */
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+  
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+  
+  section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 3px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid #3B82F6;
+  outline-offset: 2px;
+}
+
+/* Default styles from create-react-app */
 .App {
   text-align: center;
 }
