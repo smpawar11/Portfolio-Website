@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,10 +49,16 @@ const Header = () => {
           <Link to="/" onClick={scrollToTop}>SP</Link>
         </div>
         
-        <div className={`mobile-menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <div className="bar"></div>
-          <div className="bar"></div>
-          <div className="bar"></div>
+        <div className="header-right">
+          {/* Theme toggle */}
+          <ThemeToggle />
+          
+          {/* Mobile menu icon */}
+          <div className={`mobile-menu-icon ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>

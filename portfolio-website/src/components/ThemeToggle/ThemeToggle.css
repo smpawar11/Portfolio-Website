@@ -1,0 +1,80 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+}
+
+.toggle-track {
+  width: 50px;
+  height: 28px;
+  background-color: #1E293B;
+  border-radius: 30px;
+  padding: 3px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme .toggle-track {
+  background-color: #3B82F6;
+}
+
+.toggle-thumb {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #F9FAFB;
+}
+
+.light-icon {
+  left: 7px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dark-icon {
+  right: 7px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+body.dark-theme .light-icon {
+  opacity: 0.4;
+}
+
+body.light-theme .dark-icon {
+  opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+  .toggle-track {
+    width: 45px;
+    height: 25px;
+  }
+  
+  .toggle-thumb {
+    width: 19px;
+    height: 19px;
+  }
+  
+  .toggle-icon {
+    font-size: 12px;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { TypeAnimation } from 'react-type-animation';
 import './HeroSection.css';
 import profilePlaceholder from '../../../assets/profile-placeholder';
 
@@ -9,7 +10,23 @@ const HeroSection = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">Sumedh Pawar</h1>
-            <h2 className="hero-subtitle">Aspiring Software Engineer</h2>
+            <h2 className="hero-subtitle">
+              <TypeAnimation
+                sequence={[
+                  'Aspiring Software Engineer',
+                  2000,
+                  'Frontend Developer',
+                  2000,
+                  'Problem Solver',
+                  2000,
+                  'Creative Thinker',
+                  2000
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </h2>
             <p className="hero-description">
               Building impactful digital experiences through elegant code.
             </p>

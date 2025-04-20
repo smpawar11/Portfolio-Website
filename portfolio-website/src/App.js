@@ -5,6 +5,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Blog from './pages/Blog/Blog';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import { ThemeProvider } from './utils/ThemeContext';
 
 // Animation wrapper component for route transitions
 const AnimatedRoutes = () => {
@@ -66,15 +68,18 @@ const AnimatedRoutes = () => {
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Header />
-        <main>
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <main>
+            <AnimatedRoutes />
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

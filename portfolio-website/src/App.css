@@ -23,6 +23,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  color: #F9FAFB;
+  background-color: #111827;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -69,14 +76,29 @@ button {
 
 .bg-primary {
   background-color: #1E293B;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme .bg-primary {
+  background-color: #0F172A;
 }
 
 .bg-light {
   background-color: #F9FAFB;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme .bg-light {
+  background-color: #1F2937;
 }
 
 .bg-dark {
   background-color: #0F172A;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-theme .bg-dark {
+  background-color: #111827;
 }
 
 .hidden {
@@ -151,6 +173,10 @@ section {
   background: #F1F5F9;
 }
 
+body.dark-theme ::-webkit-scrollbar-track {
+  background: #1F2937;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #94A3B8;
   border-radius: 4px;
@@ -158,6 +184,81 @@ section {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #64748B;
+}
+
+/* Dark Theme Card Styles */
+body.dark-theme .project-card,
+body.dark-theme .blog-post-card,
+body.dark-theme .skill-category,
+body.dark-theme .contact-form {
+  background-color: #1F2937;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .project-card:hover,
+body.dark-theme .blog-post-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-theme .about-paragraph,
+body.dark-theme .project-description,
+body.dark-theme .post-snippet,
+body.dark-theme .contact-text,
+body.dark-theme .skills-list li {
+  color: #D1D5DB;
+}
+
+body.dark-theme .hero-description {
+  color: #D1D5DB;
+}
+
+body.dark-theme .hero-title,
+body.dark-theme .section-title,
+body.dark-theme .project-title,
+body.dark-theme .post-title,
+body.dark-theme .contact-subtitle,
+body.dark-theme .skills-title,
+body.dark-theme .category-title {
+  color: #F9FAFB;
+}
+
+body.dark-theme .tech-tag {
+  background-color: #374151;
+  color: #60A5FA;
+}
+
+body.dark-theme .form-group label {
+  color: #F9FAFB;
+}
+
+body.dark-theme .form-group input,
+body.dark-theme .form-group textarea {
+  background-color: #374151;
+  border-color: #4B5563;
+  color: #F9FAFB;
+}
+
+body.dark-theme .form-group input:focus,
+body.dark-theme .form-group textarea:focus {
+  border-color: #60A5FA;
+}
+
+body.dark-theme .footer {
+  background-color: #0F172A;
+}
+
+body.dark-theme .header {
+  background-color: #0F172A;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .btn-secondary {
+  border-color: #10B981;
+  color: #F9FAFB;
+}
+
+body.dark-theme .btn-secondary:hover {
+  background-color: rgba(16, 185, 129, 0.2);
 }
 
 /* Responsive typography */

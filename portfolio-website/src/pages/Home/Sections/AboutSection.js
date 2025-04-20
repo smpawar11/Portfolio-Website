@@ -1,7 +1,44 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './AboutSection.css';
 
 const AboutSection = () => {
+  // Define skill levels for animated progress bars
+  const skills = {
+    programming: [
+      { name: "JavaScript/TypeScript", level: 85 },
+      { name: "Python", level: 75 },
+      { name: "Java", level: 70 },
+      { name: "C/C++", level: 65 },
+      { name: "HTML/CSS", level: 90 }
+    ],
+    frameworks: [
+      { name: "React.js", level: 80 },
+      { name: "Node.js", level: 70 },
+      { name: "Express", level: 70 },
+      { name: "Django", level: 60 },
+      { name: "Bootstrap", level: 85 }
+    ],
+    tools: [
+      { name: "Git & GitHub", level: 85 },
+      { name: "MongoDB", level: 65 },
+      { name: "SQL Databases", level: 70 },
+      { name: "Docker", level: 60 },
+      { name: "AWS", level: 55 }
+    ]
+  };
+
+  const progressVariants = {
+    hidden: { width: 0 },
+    visible: width => ({
+      width: `${width}%`,
+      transition: { 
+        duration: 1,
+        ease: "easeInOut"
+      }
+    })
+  };
+
   return (
     <section id="about" className="about-section section-light">
       <div className="container">
@@ -28,35 +65,74 @@ const AboutSection = () => {
               <div className="skills-grid">
                 <div className="skill-category">
                   <h4 className="category-title">Programming Languages</h4>
-                  <ul className="skills-list">
-                    <li>JavaScript/TypeScript</li>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>C/C++</li>
-                    <li>HTML/CSS</li>
-                  </ul>
+                  <div className="skills-progress-list">
+                    {skills.programming.map((skill, index) => (
+                      <div className="skill-progress-item" key={index}>
+                        <div className="skill-info">
+                          <span className="skill-name">{skill.name}</span>
+                          <span className="skill-percentage">{skill.level}%</span>
+                        </div>
+                        <div className="progress-bar-container">
+                          <motion.div 
+                            className="progress-bar"
+                            custom={skill.level}
+                            variants={progressVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.6 }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="skill-category">
                   <h4 className="category-title">Frameworks & Libraries</h4>
-                  <ul className="skills-list">
-                    <li>React.js</li>
-                    <li>Node.js</li>
-                    <li>Express</li>
-                    <li>Django</li>
-                    <li>Bootstrap</li>
-                  </ul>
+                  <div className="skills-progress-list">
+                    {skills.frameworks.map((skill, index) => (
+                      <div className="skill-progress-item" key={index}>
+                        <div className="skill-info">
+                          <span className="skill-name">{skill.name}</span>
+                          <span className="skill-percentage">{skill.level}%</span>
+                        </div>
+                        <div className="progress-bar-container">
+                          <motion.div 
+                            className="progress-bar"
+                            custom={skill.level}
+                            variants={progressVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.6 }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
                 
                 <div className="skill-category">
                   <h4 className="category-title">Tools & Technologies</h4>
-                  <ul className="skills-list">
-                    <li>Git & GitHub</li>
-                    <li>MongoDB</li>
-                    <li>SQL Databases</li>
-                    <li>Docker</li>
-                    <li>AWS</li>
-                  </ul>
+                  <div className="skills-progress-list">
+                    {skills.tools.map((skill, index) => (
+                      <div className="skill-progress-item" key={index}>
+                        <div className="skill-info">
+                          <span className="skill-name">{skill.name}</span>
+                          <span className="skill-percentage">{skill.level}%</span>
+                        </div>
+                        <div className="progress-bar-container">
+                          <motion.div 
+                            className="progress-bar"
+                            custom={skill.level}
+                            variants={progressVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.6 }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
