@@ -1,0 +1,122 @@
+@import '../../styles/main.scss';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: transparent;
+  transition: var(--transition);
+  padding: 20px 0;
+  
+  &.scrolled {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    padding: 12px 0;
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    
+    &:hover {
+      color: var(--secondary-color);
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  
+  li {
+    margin-left: 30px;
+    
+    a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+      padding: 5px 0;
+      position: relative;
+      transition: var(--transition);
+      
+      &:hover {
+        color: var(--primary-color);
+      }
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary-color);
+        transition: var(--transition);
+      }
+      
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: var(--transition);
+  
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--white);
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+    padding: 80px 20px 20px;
+    
+    &.open {
+      right: 0;
+    }
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    
+    li {
+      margin: 20px 0;
+      margin-left: 0;
+      
+      a {
+        display: block;
+      }
+    }
+  }
+}
