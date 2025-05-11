@@ -1,0 +1,25 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Complete portfolio website with React frontend and Node.js/MongoDB backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd portfolio-backend && npm run dev",
+    "client": "cd portfolio-frontend && npm start",
+    "install-all": "npm install && cd portfolio-backend && npm install && cd ../portfolio-frontend && npm install",
+    "build": "cd portfolio-frontend && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "node",
+    "mongodb"
+  ],
+  "author": "Sumedh Pawar",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

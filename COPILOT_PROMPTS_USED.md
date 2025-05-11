@@ -54,3 +54,54 @@ COPILOT_PROMPTS_USED.md that documents all prompts in our conversation. Format e
 4. Add a brief introduction explaining that this document tracks all AI interactions chronologically
 
 i want this to happen through out this coding session
+
+## Prompt 6
+*2025-05-11, Current Time*
+
+okay i would like to make an portfolio website about myself so i can learn how to develop a fullstack application. the tech stack i would like to use for this project is a react for the front end, js for backend and a mongo db to handle contact forms and other such things. also throughout this coding session i would like you to save all the prompts i enter into copilot_prompts_used.md this file already exists. to start of this project i would like to work on just the front end first. could you make a simple react front end that suits a portfolio website for a university student.
+
+## Prompt 7
+*2025-05-11, Current Time*
+
+Please continue
+
+## Prompt 8
+*2025-05-11, Current Time*
+
+for the footer content could you change the twitter icon to the updated 'x' icon please
+
+## Prompt 9
+*2025-05-11, Current Time*
+
+use the img i have added to the images folder for the image on the front page next to my about section
+
+## Prompt 10
+*2025-05-11, Current Time*
+
+okay i have deleted the heic format and input a jpg
+
+## Prompt 11
+*2025-05-11, Current Time*
+
+could you make it so that the skills section is underneath the paragraph about me
+
+## Prompt 12
+*2025-05-11, Current Time*
+
+make the title of "My Skills" the same stylign as the "What I Offer"
+
+## Prompt 13
+*2025-05-11, Current Time*
+
+i am getting this error
+
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /sumedhpawar/portfolio-website/Portfolio-Website/portfolio-frontend/src/components/About/About.jsx: Expected corresponding JSX closing tag for <p>. (54:10)
+
+  52 |                 I firmly believe in collaboration and continuous learning to drive innovation and create impactful solutions. My goal is to contribute to projects that make a difference and to grow both personally and professionally in the ever-evolving tech landscape.
+  53 |             </p>
+> 54 |           </motion.div>
+     |           ^
+  55 |           
+  56 |           <motion.div 
+  57 |             className="skills"
